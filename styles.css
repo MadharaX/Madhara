@@ -404,12 +404,7 @@ body {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
-    filter: grayscale(100%);
-    transition: filter 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.portfolio-card img.in-viewport {
-    filter: grayscale(0%) saturate(1.3);
+    filter: grayscale(0%);
 }
 
 /* Contact Section */

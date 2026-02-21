@@ -78,28 +78,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Saturation effect when images scroll to middle of viewport
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('.portfolio-card img');
-    
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-viewport');
-            } else {
-                entry.target.classList.remove('in-viewport');
-            }
-        });
-    }, observerOptions);
-    
-    images.forEach(img => {
-        observer.observe(img);
-    });
-});
+
 
