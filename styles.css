@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url('Assets/Poppins-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -58,10 +65,11 @@ body {
 }
 
 .nav-logo .logo {
-    width: 160px;
-    height: 64px;
-    display: block;
-    object-fit: contain;
+    font-family: 'Poppins-Light', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .nav-logo .logo-text {
