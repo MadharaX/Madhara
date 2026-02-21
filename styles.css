@@ -143,8 +143,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background: #252627;
     z-index: 99;
     flex-direction: column;
@@ -152,6 +152,7 @@ body {
     justify-content: center; /* vertically center items */
     padding-top: 0;
     gap: 20px;
+    overflow: hidden;
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect width="32" height="32" fill="transparent"/><path fill="white" d="M2 2v28l10-10h16L2 2z"/></svg>') 2 2, auto;
 }
 
@@ -496,11 +497,11 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-}
-
-.footer-logo img {
-    width: 160px;
-    height: 64px;
+    font-family: 'Poppins-Light', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #fff;
 }
 
 .footer-logo .logo-text {
