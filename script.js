@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hamburger.classList.add('active');
                 mobileMenu.classList.add('active');
                 navbar.classList.add('hidden-by-menu');
+                document.body.style.overflow = 'hidden';
             }
         });
     }
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.remove('active');
             mobileMenu.classList.remove('active');
             navbar.classList.remove('hidden-by-menu');
+            document.body.style.overflow = '';
         });
     });
 
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.remove('active');
             mobileMenu.classList.remove('active');
             navbar.classList.remove('hidden-by-menu');
+            document.body.style.overflow = '';
         });
     }
 });
