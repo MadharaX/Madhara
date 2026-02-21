@@ -61,6 +61,7 @@ body {
     width: 160px;
     height: 64px;
     display: block;
+    object-fit: contain;
 }
 
 .nav-logo .logo-text {
