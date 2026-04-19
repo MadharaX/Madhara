@@ -54,6 +54,47 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+function setupMobileThumbnailSaturation() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const portfolioImages = document.querySelectorAll('.portfolio-card img');
+
+    if (!portfolioImages.length) return;
+
+    let observer;
+    const observeImages = () => {
+        if (observer) {
+            observer.disconnect();
+            observer = null;
+        }
+
+        if (!isMobile) {
+            portfolioImages.forEach(img => img.classList.remove('in-view'));
+            return;
+        }
+
+        observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                } else {
+                    entry.target.classList.remove('in-view');
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '-25% 0px -25% 0px',
+            threshold: 0.01
+        });
+
+        portfolioImages.forEach(img => observer.observe(img));
+    };
+
+    observeImages();
+}
+
+window.addEventListener('resize', setupMobileThumbnailSaturation);
+window.addEventListener('load', setupMobileThumbnailSaturation);
+
 // Add scroll effect to navbar
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');

@@ -414,7 +414,15 @@ body {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
-    filter: grayscale(0%);
+    filter: saturate(0);
+    transition: filter 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: filter;
+}
+
+.portfolio-card:hover img,
+.portfolio-card img:hover,
+.portfolio-card img.in-view {
+    filter: saturate(1);
 }
 
 /* Contact Section */
@@ -582,6 +590,6 @@ body {
     .copyright { order: 3; flex: 0; margin: 0; }
 
     .portfolio-card img {
-        filter: grayscale(0%); /* show full color on mobile */
+        filter: saturate(0); /* low saturation until image is centered on mobile */
     }
 }
